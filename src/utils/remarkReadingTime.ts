@@ -14,10 +14,17 @@
 import getReadingTime from 'reading-time';
 import { toString } from 'mdast-util-to-string';
 import type { Root } from 'mdast';
-import type { VFile } from 'vfile';
+
+interface AstroFile {
+  data?: {
+    astro?: {
+      frontmatter?: Record<string, unknown>;
+    };
+  };
+}
 
 export function remarkReadingTime() {
-  return function (tree: Root, file: VFile) {
+  return function (tree: Root, file: AstroFile) {
     const textOnPage = toString(tree);
     const readingTime = getReadingTime(textOnPage);
     
@@ -37,6 +44,8 @@ export function remarkReadingTime() {
     }
     
     // Add the reading time to the frontmatter
-    file.data.astro.frontmatter.minutesRead = readingTime.text;
+    if (file.data.astro && file.data.astro.frontmatter) {
+      file.data.astro.frontmatter.minutesRead = readingTime.text;
+    }
   };
 }
