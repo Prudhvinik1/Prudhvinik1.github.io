@@ -1,79 +1,86 @@
-# Astro Resume
+# Prudhvi Nikku - Portfolio
+
+A modern, responsive portfolio website built with Next.js 16, TypeScript, and shadcn/ui components.
 
 ## Features
 
-- Astro v4
-- TailwindCSS utility classes
-- ESLint / Prettier pre-installed and pre-configured
-- Accessible, semantic HTML markup
-- Responsive & SEO-friendly
-- Dark / Light mode, using Tailwind and CSS variables (referenced from shadcn)
-- [Astro Assets Integration](https://docs.astro.build/en/guides/assets/) for optimised images
-- MD & [MDX](https://docs.astro.build/en/guides/markdown-content/#mdx-only-features) posts
-- Pagination
-- [Automatic RSS feed](https://docs.astro.build/en/guides/rss)
-- Auto-generated [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
-- [Expressive Code](https://expressive-code.com/) source code and syntax highlighter
+- Modern and clean design with shadcn/ui components
+- Dark/Light mode toggle with system preference detection
+- Fully responsive layout
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Fast and optimized with Next.js 16
 
-## Credits
+## Tech Stack
 
-- [astro-theme-cactus](https://github.com/chrismwilliams/astro-theme-cactus) for blog design
-- [minirezume-framer](https://minirezume.framer.website/) for resume homepage design
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Theme**: next-themes
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or pnpm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build
+
+```bash
+npm run build
+```
+
+### Production
+
+```bash
+npm start
+```
 
 ## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+```
+├── app/
+│   ├── layout.tsx      # Root layout with theme provider
+│   ├── page.tsx        # Homepage with all portfolio sections
+│   └── globals.css     # Global styles and Tailwind directives
+├── components/
+│   ├── ui/             # shadcn/ui components
+│   ├── theme-provider.tsx
+│   └── theme-toggle.tsx
+├── lib/
+│   ├── data.ts         # Portfolio content and data
+│   └── utils.ts        # Utility functions
+└── public/             # Static assets
 
-```text
-├── public/
-├── src/
-    ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-|   ├── pages/
-|   ├── styles/
-|   ├── utils/
-|   ├── site.config.ts
-│   └── types.ts
-├── .elintrc.cjs
-├── .gitignore
-├── .prettierignore
-├── package.json
-├── prettier.config.cjs
-├── README.md
-├── tailwind.config.js
-└── tsconfig.json
 ```
 
-## Editing guide
+## Customization
 
-### Site info
+To customize the portfolio content, edit the `lib/data.ts` file with your personal information, experience, education, projects, and skills.
 
-To edit site info such as site title and description, edit the `src/site.config.ts` file.
+## Deployment
 
-### Page contents
+This portfolio is designed to be deployed on Vercel, but can be deployed to any platform that supports Next.js applications.
 
-To edit the resume homepage content and design, edit the `src/pages/index.astro` file.
+## License
 
-### Page components
-
-To edit page components found site-wide such as the card used in the homepage, edit the files found in the `src/components/` directory.
-
-### Layouts
-
-To edit the base layouts of all pages, edit the `src/layouts/BaseLayout.astro` file.
-
-To edit the layout of a blog article, edit the `src/layouts/BlogPost.astro` file.
-
-### Blog content
-
-To add blog content, insert `.md` files in the `src/content/` directory.
-
-To add images in blog articles, insert a folder in the `src/content/` directory, add both the `.md` and image files into the new folder, and reference the image in your `.md` file.
-
-## Theming
-
-To change the theme colours of the site, edit the `src/styles/app.css` file.
-
-To change the fonts of the site, add your font files into `/public`, add it as a `@font-face` in the `src/styles/app.css` file, as a `fontFamily` in the `tailwind.config.js` file, and apply the new font class to the `body` tag in the `src/layouts/BaseLayout.astro` file.
+MIT License - feel free to use this template for your own portfolio!
