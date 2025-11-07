@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@/components/analytics";
+import { PlausibleAnalytics } from "@/components/analytics";
 
 export const metadata: Metadata = {
   title: "Prudhvi Nikku - Software Engineer",
@@ -23,6 +25,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Analytics />
+        <PlausibleAnalytics />
       </body>
     </html>
   );

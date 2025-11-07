@@ -55,5 +55,120 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Professional smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-smooth-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Professional hover lift effect */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scroll animations */
+@layer utilities {
+  .animate-in {
+    animation: animate-in 0.6s ease-out;
+  }
+
+  .fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .slide-in-from-bottom-4 {
+    animation: slide-in-from-bottom-4 0.6s ease-out;
+  }
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom-4 {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Improved section spacing */
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+/* Better container spacing */
+.container-fluid {
+  @apply container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid with equal height rows */
+.auto-rows-fr {
+  grid-auto-rows: 1fr;
+}
+
+/* Professional card styling */
+.card-professional {
+  @apply border border-border/50 rounded-lg bg-card shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+/* Improved typography */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Better gradient backgrounds */
+.gradient-mesh {
+  background: radial-gradient(at 0% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, hsl(var(--primary) / 0.05) 0px, transparent 50%),
+              radial-gradient(at 0% 100%, hsl(var(--primary) / 0.05) 0px, transparent 50%);
 }
