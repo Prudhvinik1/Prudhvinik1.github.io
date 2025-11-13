@@ -179,7 +179,7 @@ export const stats = [
 export const featuredLinks = [
   {
     name: "Resume",
-    url: "/resume.pdf",
+    url: "/Satya_Prudhvi_Nikku_Resume.pdf",
     icon: "file",
   },
   {

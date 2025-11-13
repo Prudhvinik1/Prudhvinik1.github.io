@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Secret MD Files
+GOOGLE_ANALYTICS_SECRET.md
+CMS_INTEGRATION.md
+CMS_RECOMMENDATIONS.md
+METRICS_SETUP.md
+REFERRALS_SETUP.md
+SANITY_SETUP.md

@@ -149,7 +149,7 @@ export default async function Home() {
                   </ScaleOnHover>
                   <ScaleOnHover>
                     <Button variant="secondary" size="lg" asChild className="transition-smooth px-6 sm:px-8 py-6">
-                      <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                      <Link href="/Satya_Prudhvi_Nikku_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
                         <Download className="mr-2 h-5 w-5" />
                         Resume
                       </Link>
