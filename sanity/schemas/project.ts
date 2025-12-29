@@ -25,6 +25,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "period",
+      title: "Time Period",
+      type: "string",
+      description: "When this project was completed (e.g., 'September 2025')",
+    }),
+    defineField({
       name: "technologies",
       title: "Technologies",
       type: "array",
