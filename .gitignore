@@ -40,10 +40,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Secret MD Files
-GOOGLE_ANALYTICS_SECRET.md
+# Setup/Documentation MD Files (not for public repo)
+ADMIN_SETUP.md
 CMS_INTEGRATION.md
 CMS_RECOMMENDATIONS.md
+DEPLOYMENT.md
+GOOGLE_ANALYTICS_SETUP.md
+GOOGLE_ANALYTICS_SECRET.md
 METRICS_SETUP.md
-REFERRALS_SETUP.md
+REFERRAL_SETUP.md
 SANITY_SETUP.md

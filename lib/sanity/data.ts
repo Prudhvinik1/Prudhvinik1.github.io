@@ -9,6 +9,9 @@ import {
   statsQuery,
 } from "./queries";
 
+// Revalidate data every 60 seconds (adjust as needed)
+const REVALIDATE_SECONDS = 60;
+
 // Helper to fetch data with fallback to static data
 async function fetchWithFallback<T>(
   query: string,
@@ -22,7 +25,10 @@ async function fetchWithFallback<T>(
   }
 
   try {
-    const data = await client.fetch(query);
+    // Use next.revalidate to control caching behavior
+    const data = await client.fetch(query, {}, {
+      next: { revalidate: REVALIDATE_SECONDS }
+    });
     // Handle empty arrays - if data is an empty array, use fallback
     if (Array.isArray(data) && data.length === 0) {
       return fallback;
