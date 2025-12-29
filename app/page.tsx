@@ -10,6 +10,7 @@ import { StatCard } from "@/components/stat-card";
 import { GitHubStats } from "@/components/github-stats";
 import { VisitorMetrics } from "@/components/visitor-metrics";
 import { PerformanceMetrics } from "@/components/performance-metrics";
+import { ProjectCard } from "@/components/project-card";
 import {
   FadeInOnScroll,
   StaggerContainer,
@@ -426,63 +427,13 @@ export default async function Home() {
               <div className="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
             </div>
             <StaggerContainer className="grid gap-6 md:gap-8 md:grid-cols-2">
-            {projects.map((project, index) => (
+              {projects.map((project, index) => (
                 <StaggerItem key={index}>
                   <LiftOnHover>
-                    <Card className="border-2 hover:border-primary/50 transition-smooth flex flex-col h-full group">
-                      <CardHeader className="pb-4">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-grow space-y-2">
-                            <CardTitle className="text-xl sm:text-2xl md:text-3xl group-hover:text-primary transition-colors">
-                              {project.name}
-                            </CardTitle>
-                            {(project as any).period && (
-                              <Badge variant="secondary" className="text-xs">
-                                {(project as any).period}
-                              </Badge>
-                            )}
-                          </div>
-                          <Link
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
-                          >
-                            <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-                    </Link>
-                  </div>
-                </CardHeader>
-                      <CardContent className="flex-grow flex flex-col pt-0">
-                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-6 text-balance">
-                          {project.description}
-                        </p>
-                        {(project as any).technologies && Array.isArray((project as any).technologies) && (project as any).technologies.length > 0 && (
-                          <div className="mb-6">
-                            <p className="text-xs font-semibold text-foreground mb-2">Technologies:</p>
-                            <div className="flex flex-wrap gap-2">
-                              {(project as any).technologies.map((tech: string, i: number) => (
-                                <Badge key={i} variant="outline" className="text-xs">
-                                  {tech}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        <div className="mt-auto pt-4 border-t">
-                          <Link
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-sm font-medium text-primary hover:underline group/link transition-smooth"
-                          >
-                            View Project <ExternalLink className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <ProjectCard project={project as any} />
                   </LiftOnHover>
                 </StaggerItem>
-            ))}
+              ))}
             </StaggerContainer>
           </FadeInOnScroll>
         </div>
