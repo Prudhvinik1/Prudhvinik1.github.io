@@ -9,7 +9,6 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { StatCard } from "@/components/stat-card";
 import { GitHubStats } from "@/components/github-stats";
 import { VisitorMetrics } from "@/components/visitor-metrics";
-import { PerformanceMetrics } from "@/components/performance-metrics";
 import { ProjectCard } from "@/components/project-card";
 import {
   FadeInOnScroll,
@@ -672,15 +671,12 @@ export default async function Home() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Metrics & Analytics</h2>
               <div className="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
             </div>
-            <StaggerContainer className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <StaggerContainer className="grid gap-6 md:gap-8 md:grid-cols-2">
               <StaggerItem>
                 <GitHubStats />
               </StaggerItem>
               <StaggerItem>
                 <VisitorMetrics />
-              </StaggerItem>
-              <StaggerItem>
-                <PerformanceMetrics />
               </StaggerItem>
             </StaggerContainer>
           </FadeInOnScroll>
