@@ -31,6 +31,9 @@ import {
 import { featuredLinks } from "@/lib/data";
 import { getSkillIcon } from "@/lib/skill-icons";
 
+// Revalidate the page every 60 seconds to pick up CMS changes
+export const revalidate = 60;
+
 export default async function Home() {
   // Fetch all data from Sanity CMS (with fallback to static data)
   const [personalInfo, about, experience, education, projects, skills, statsData] = await Promise.all([
