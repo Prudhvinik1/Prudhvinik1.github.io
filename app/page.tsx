@@ -562,6 +562,9 @@ export default function Home() {
                           {link.icon === "code" && (
                             <Code className="h-10 w-10 sm:h-12 sm:w-12 text-primary group-hover:scale-110 transition-transform" />
                           )}
+                          {link.icon === "github" && (
+                            <Github className="h-10 w-10 sm:h-12 sm:w-12 text-primary group-hover:scale-110 transition-transform" />
+                          )}
                           <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors">
                             {link.name}
                           </h3>
@@ -697,8 +700,7 @@ export default function Home() {
         <div className="container-fluid py-8 md:py-12">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} {personalInfo.name}. All rights
-              reserved.
+              © 2025 {personalInfo.name}. All rights reserved.
             </p>
             <p className="text-xs sm:text-sm text-muted-foreground/60">
               Built with Next.js, TypeScript, and Framer Motion
