@@ -6,72 +6,72 @@
 
 @layer base {
   :root {
-    /* Modern blue-purple gradient palette */
-    --background: 222 47% 98%;
-    --foreground: 222 47% 11%;
+    /* Modern golden/amber gradient palette */
+    --background: 40 30% 98%;
+    --foreground: 30 20% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 30 20% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    /* Blue primary */
-    --primary: 217 91% 60%;
+    --popover-foreground: 30 20% 11%;
+    /* Golden primary */
+    --primary: 45 93% 47%;
     --primary-foreground: 0 0% 100%;
-    /* Purple accent */
-    --secondary: 262 83% 58%;
+    /* Amber accent */
+    --secondary: 38 92% 50%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 40 30% 96%;
+    --muted-foreground: 30 10% 45%;
     /* Accent for effects */
-    --accent: 262 83% 58%;
+    --accent: 32 95% 44%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
+    --ring: 45 93% 47%;
     --radius: 1rem;
     /* Gradient colors */
-    --gradient-start: 217 91% 60%;
-    --gradient-end: 262 83% 58%;
+    --gradient-start: 45 93% 47%;
+    --gradient-end: 32 95% 44%;
     /* Chart/accent colors */
-    --chart-blue: 217 91% 60%;
-    --chart-purple: 262 83% 58%;
-    --chart-dark: 222 47% 11%;
-    --card-highlight: 217 91% 97%;
+    --chart-gold: 45 93% 47%;
+    --chart-amber: 32 95% 44%;
+    --chart-dark: 30 20% 11%;
+    --card-highlight: 45 80% 97%;
   }
 
   .dark {
-    /* Dark mode with blue-purple palette */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 98%;
-    /* Blue primary */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    /* Purple accent */
-    --secondary: 262 83% 58%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    /* Dark mode with golden palette */
+    --background: 30 20% 6%;
+    --foreground: 40 20% 98%;
+    --card: 30 25% 10%;
+    --card-foreground: 40 20% 98%;
+    --popover: 30 25% 10%;
+    --popover-foreground: 40 20% 98%;
+    /* Golden primary */
+    --primary: 45 93% 47%;
+    --primary-foreground: 30 20% 10%;
+    /* Amber accent */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 30 20% 10%;
+    --muted: 30 25% 17%;
+    --muted-foreground: 40 15% 65%;
     /* Accent for effects */
-    --accent: 262 83% 58%;
+    --accent: 32 95% 44%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 217 91% 60%;
+    --border: 30 25% 17%;
+    --input: 30 25% 17%;
+    --ring: 45 93% 47%;
     /* Gradient colors */
-    --gradient-start: 217 91% 60%;
-    --gradient-end: 262 83% 58%;
+    --gradient-start: 45 93% 47%;
+    --gradient-end: 32 95% 44%;
     /* Chart/accent colors */
-    --chart-blue: 217 91% 60%;
-    --chart-purple: 262 83% 58%;
-    --chart-dark: 222 47% 20%;
-    --card-highlight: 217 50% 15%;
+    --chart-gold: 45 93% 47%;
+    --chart-amber: 32 95% 44%;
+    --chart-dark: 30 25% 20%;
+    --card-highlight: 45 50% 15%;
   }
 }
 
@@ -203,7 +203,7 @@ html {
 }
 
 .dark .glass-card {
-  background: rgba(30, 41, 59, 0.7);
+  background: rgba(30, 35, 40, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -243,11 +243,11 @@ html {
   @apply bg-card-highlight border-primary/20;
 }
 
-.card-accent-blue {
+.card-accent-gold {
   @apply bg-gradient-to-br from-primary/15 to-primary/5 border-primary/20;
 }
 
-.card-accent-purple {
+.card-accent-amber {
   @apply bg-gradient-to-br from-accent/30 to-accent/10 border-accent-foreground/10;
 }
 
@@ -328,7 +328,7 @@ html {
   );
 }
 
-/* Hover glow effect */
+/* Hover glow effect - Golden */
 .hover-glow {
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -348,7 +348,7 @@ html {
   transform: translateY(-4px);
 }
 
-/* Corner accent decorations */
+/* Corner accent decorations - Golden */
 .corner-accent::before,
 .corner-accent::after {
   content: '';
@@ -418,7 +418,7 @@ html {
   transform: rotate(15deg);
 }
 
-/* Gradient placeholder for project images */
+/* Gradient placeholder for project images - Golden */
 .gradient-placeholder {
   background: linear-gradient(
     135deg,

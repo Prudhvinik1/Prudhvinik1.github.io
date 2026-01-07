@@ -49,8 +49,8 @@ const config: Config = {
           highlight: "hsl(var(--card-highlight))",
         },
         chart: {
-          blue: "hsl(var(--chart-blue))",
-          purple: "hsl(var(--chart-purple))",
+          gold: "hsl(var(--chart-gold))",
+          amber: "hsl(var(--chart-amber))",
           dark: "hsl(var(--chart-dark))",
         },
       },
@@ -67,8 +67,8 @@ const config: Config = {
         "soft-lg": "0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 30px -5px rgba(0, 0, 0, 0.05)",
         "soft-xl": "0 10px 40px -10px rgba(0, 0, 0, 0.12), 0 20px 50px -15px rgba(0, 0, 0, 0.08)",
         "inner-soft": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)",
-        "glow": "0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2)",
-        "glow-lg": "0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.3)",
+        "glow": "0 0 20px rgba(234, 179, 8, 0.3), 0 0 40px rgba(217, 119, 6, 0.2)",
+        "glow-lg": "0 0 30px rgba(234, 179, 8, 0.4), 0 0 60px rgba(217, 119, 6, 0.3)",
       },
       animation: {
         "blob": "blob 8s ease-in-out infinite",
