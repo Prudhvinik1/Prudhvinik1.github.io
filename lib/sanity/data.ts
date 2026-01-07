@@ -17,9 +17,8 @@ async function fetchWithFallback<T>(
   query: string,
   fallback: T
 ): Promise<T> {
-  // Check if Sanity is configured
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-  if (!projectId || projectId.trim() === "") {
+  // Check if Sanity client is configured
+  if (!client) {
     // Sanity not configured, return fallback immediately
     return fallback;
   }
