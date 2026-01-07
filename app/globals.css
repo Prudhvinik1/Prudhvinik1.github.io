@@ -1,69 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* AppSport-inspired warm, cream aesthetic */
-    --background: 40 30% 96%;
-    --foreground: 220 20% 20%;
+    /* Modern blue-purple gradient palette */
+    --background: 222 47% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 20%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 20%;
-    /* Golden yellow primary - like AppSport */
-    --primary: 45 93% 58%;
-    --primary-foreground: 220 20% 15%;
-    /* Soft lavender secondary */
-    --secondary: 260 30% 96%;
-    --secondary-foreground: 220 20% 20%;
-    --muted: 40 20% 94%;
-    --muted-foreground: 220 10% 45%;
-    /* Light purple accent */
-    --accent: 280 60% 95%;
-    --accent-foreground: 280 50% 30%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 222 47% 11%;
+    /* Blue primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    /* Purple accent */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    /* Accent for effects */
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 20% 90%;
-    --input: 40 20% 90%;
-    --ring: 45 93% 58%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
     --radius: 1rem;
-    /* Additional accent colors */
-    --chart-yellow: 45 93% 58%;
-    --chart-purple: 280 60% 70%;
-    --chart-dark: 220 25% 20%;
-    --card-highlight: 45 93% 95%;
+    /* Gradient colors */
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 262 83% 58%;
+    /* Chart/accent colors */
+    --chart-blue: 217 91% 60%;
+    --chart-purple: 262 83% 58%;
+    --chart-dark: 222 47% 11%;
+    --card-highlight: 217 91% 97%;
   }
 
   .dark {
-    /* Dark mode with warm undertones */
-    --background: 220 25% 10%;
-    --foreground: 40 20% 95%;
-    --card: 220 25% 14%;
-    --card-foreground: 40 20% 95%;
-    --popover: 220 25% 14%;
-    --popover-foreground: 40 20% 95%;
-    /* Golden yellow primary */
-    --primary: 45 93% 58%;
-    --primary-foreground: 220 20% 10%;
-    /* Darker lavender secondary */
-    --secondary: 260 20% 20%;
-    --secondary-foreground: 40 20% 95%;
-    --muted: 220 20% 18%;
-    --muted-foreground: 40 15% 65%;
-    /* Dark purple accent */
-    --accent: 280 30% 25%;
-    --accent-foreground: 280 60% 85%;
-    --destructive: 0 62.8% 45%;
+    /* Dark mode with blue-purple palette */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    /* Blue primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    /* Purple accent */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    /* Accent for effects */
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 45 93% 58%;
-    /* Additional accent colors for dark mode */
-    --chart-yellow: 45 93% 58%;
-    --chart-purple: 280 50% 60%;
-    --chart-dark: 220 25% 30%;
-    --card-highlight: 45 50% 20%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+    /* Gradient colors */
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 262 83% 58%;
+    /* Chart/accent colors */
+    --chart-blue: 217 91% 60%;
+    --chart-purple: 262 83% 58%;
+    --chart-dark: 222 47% 20%;
+    --card-highlight: 217 50% 15%;
   }
 }
 
@@ -73,7 +81,13 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -173,6 +187,52 @@ html {
   grid-auto-rows: 1fr;
 }
 
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
 /* Professional card styling */
 .card-professional {
   @apply border border-border/50 rounded-2xl bg-card shadow-soft hover:shadow-soft-lg transition-all duration-300;
@@ -183,8 +243,8 @@ html {
   @apply bg-card-highlight border-primary/20;
 }
 
-.card-accent-yellow {
-  @apply bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20;
+.card-accent-blue {
+  @apply bg-gradient-to-br from-primary/15 to-primary/5 border-primary/20;
 }
 
 .card-accent-purple {
@@ -200,12 +260,13 @@ html {
   text-wrap: balance;
 }
 
-/* Better gradient backgrounds - AppSport warm aesthetic */
+/* Modern gradient mesh background */
 .gradient-mesh {
-  background: radial-gradient(at 0% 0%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
-              radial-gradient(at 100% 0%, hsl(var(--chart-purple) / 0.1) 0px, transparent 50%),
-              radial-gradient(at 100% 100%, hsl(var(--primary) / 0.08) 0px, transparent 50%),
-              radial-gradient(at 0% 100%, hsl(var(--chart-purple) / 0.08) 0px, transparent 50%);
+  background:
+    radial-gradient(at 20% 30%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, hsl(var(--accent) / 0.12) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, hsl(var(--primary) / 0.08) 0px, transparent 50%),
+    radial-gradient(at 10% 70%, hsl(var(--accent) / 0.1) 0px, transparent 50%);
 }
 
 /* Dashboard container styling */
@@ -224,4 +285,145 @@ html {
 
 .nav-pill-active {
   @apply bg-primary text-primary-foreground;
+}
+
+/* Animated gradient blob */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* Timeline styles */
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+}
+
+/* Hover glow effect */
+.hover-glow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 20px hsl(var(--primary) / 0.3),
+    0 0 40px hsl(var(--accent) / 0.2);
+}
+
+/* Skill card expansion */
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Corner accent decorations */
+.corner-accent::before,
+.corner-accent::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.corner-accent::before {
+  top: -1px;
+  left: -1px;
+  border-top: 3px solid hsl(var(--primary));
+  border-left: 3px solid hsl(var(--primary));
+  border-top-left-radius: inherit;
+}
+
+.corner-accent::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 3px solid hsl(var(--accent));
+  border-right: 3px solid hsl(var(--accent));
+  border-bottom-right-radius: inherit;
+}
+
+/* Floating orb styles */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+/* Project card overlay */
+.project-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* Stagger animation for skill tags */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item {
+  animation: stagger-in 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Dark mode toggle animation */
+.theme-toggle {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg);
+}
+
+/* Gradient placeholder for project images */
+.gradient-placeholder {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.3) 0%,
+    hsl(var(--accent) / 0.3) 50%,
+    hsl(var(--primary) / 0.2) 100%
+  );
 }
