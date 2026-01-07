@@ -4,48 +4,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* AppSport-inspired warm, cream aesthetic */
+    --background: 40 30% 96%;
+    --foreground: 220 20% 20%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 20%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 220 20% 20%;
+    /* Golden yellow primary - like AppSport */
+    --primary: 45 93% 58%;
+    --primary-foreground: 220 20% 15%;
+    /* Soft lavender secondary */
+    --secondary: 260 30% 96%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 45%;
+    /* Light purple accent */
+    --accent: 280 60% 95%;
+    --accent-foreground: 280 50% 30%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
+    --ring: 45 93% 58%;
+    --radius: 1rem;
+    /* Additional accent colors */
+    --chart-yellow: 45 93% 58%;
+    --chart-purple: 280 60% 70%;
+    --chart-dark: 220 25% 20%;
+    --card-highlight: 45 93% 95%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    /* Dark mode with warm undertones */
+    --background: 220 25% 10%;
+    --foreground: 40 20% 95%;
+    --card: 220 25% 14%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 25% 14%;
+    --popover-foreground: 40 20% 95%;
+    /* Golden yellow primary */
+    --primary: 45 93% 58%;
+    --primary-foreground: 220 20% 10%;
+    /* Darker lavender secondary */
+    --secondary: 260 20% 20%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 40 15% 65%;
+    /* Dark purple accent */
+    --accent: 280 30% 25%;
+    --accent-foreground: 280 60% 85%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 45 93% 58%;
+    /* Additional accent colors for dark mode */
+    --chart-yellow: 45 93% 58%;
+    --chart-purple: 280 50% 60%;
+    --chart-dark: 220 25% 30%;
+    --card-highlight: 45 50% 20%;
   }
 }
 
@@ -87,13 +105,13 @@ html {
 
 /* Professional hover lift effect */
 .hover-lift {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12), 0 20px 50px -15px rgba(0, 0, 0, 0.08);
 }
 
 /* Smooth scroll animations */
@@ -157,7 +175,24 @@ html {
 
 /* Professional card styling */
 .card-professional {
-  @apply border border-border/50 rounded-lg bg-card shadow-sm hover:shadow-md transition-all duration-300;
+  @apply border border-border/50 rounded-2xl bg-card shadow-soft hover:shadow-soft-lg transition-all duration-300;
+}
+
+/* Dashboard-style card variants */
+.card-highlight {
+  @apply bg-card-highlight border-primary/20;
+}
+
+.card-accent-yellow {
+  @apply bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20;
+}
+
+.card-accent-purple {
+  @apply bg-gradient-to-br from-accent/30 to-accent/10 border-accent-foreground/10;
+}
+
+.card-dark {
+  @apply bg-chart-dark text-white border-chart-dark;
 }
 
 /* Improved typography */
@@ -165,10 +200,28 @@ html {
   text-wrap: balance;
 }
 
-/* Better gradient backgrounds */
+/* Better gradient backgrounds - AppSport warm aesthetic */
 .gradient-mesh {
-  background: radial-gradient(at 0% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%),
-              radial-gradient(at 100% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%),
-              radial-gradient(at 100% 100%, hsl(var(--primary) / 0.05) 0px, transparent 50%),
-              radial-gradient(at 0% 100%, hsl(var(--primary) / 0.05) 0px, transparent 50%);
+  background: radial-gradient(at 0% 0%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+              radial-gradient(at 100% 0%, hsl(var(--chart-purple) / 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, hsl(var(--primary) / 0.08) 0px, transparent 50%),
+              radial-gradient(at 0% 100%, hsl(var(--chart-purple) / 0.08) 0px, transparent 50%);
+}
+
+/* Dashboard container styling */
+.dashboard-section {
+  @apply rounded-3xl p-6 md:p-8;
+}
+
+/* Navigation pill style */
+.nav-pill {
+  @apply rounded-full px-4 py-2 text-sm font-medium transition-all duration-200;
+}
+
+.nav-pill:hover {
+  @apply bg-primary/10 text-primary;
+}
+
+.nav-pill-active {
+  @apply bg-primary text-primary-foreground;
 }

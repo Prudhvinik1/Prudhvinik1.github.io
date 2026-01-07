@@ -42,7 +42,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b shadow-sm"
+          ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-soft"
           : "bg-transparent"
       }`}
     >
@@ -54,35 +54,40 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+            className="text-xl font-bold text-primary"
           >
             PN
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Button
-                key={item.href}
-                variant="ghost"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className="text-sm"
-              >
-                {item.label}
-              </Button>
-            ))}
-            <ThemeToggle />
+          {/* Desktop Navigation - Dashboard pill style */}
+          <div className="hidden lg:flex items-center">
+            <div className="flex items-center gap-1 bg-muted/50 rounded-full px-2 py-1.5">
+              {navItems.map((item) => (
+                <Button
+                  key={item.href}
+                  variant="ghost"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
+                  className="text-sm rounded-full px-3 py-1 h-auto hover:bg-primary/10 hover:text-primary"
+                >
+                  {item.label}
+                </Button>
+              ))}
+            </div>
+            <div className="ml-3">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
+              className="rounded-full"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -96,7 +101,7 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div className="lg:hidden pb-4 space-y-1 bg-card/95 backdrop-blur-lg rounded-2xl p-3 mt-2 shadow-soft-lg border border-border/50">
             {navItems.map((item) => (
               <Button
                 key={item.href}
@@ -105,7 +110,7 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className="w-full justify-start"
+                className="w-full justify-start rounded-xl hover:bg-primary/10 hover:text-primary"
               >
                 {item.label}
               </Button>
