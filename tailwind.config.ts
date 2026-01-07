@@ -42,12 +42,29 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          highlight: "hsl(var(--card-highlight))",
+        },
+        // AppSport-inspired accent colors
+        chart: {
+          yellow: "hsl(var(--chart-yellow))",
+          purple: "hsl(var(--chart-purple))",
+          dark: "hsl(var(--chart-dark))",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)",
+        "3xl": "calc(var(--radius) + 12px)",
+      },
+      boxShadow: {
+        // Soft shadows for dashboard cards
+        "soft": "0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)",
+        "soft-lg": "0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 30px -5px rgba(0, 0, 0, 0.05)",
+        "soft-xl": "0 10px 40px -10px rgba(0, 0, 0, 0.12), 0 20px 50px -15px rgba(0, 0, 0, 0.08)",
+        "inner-soft": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)",
       },
     },
   },

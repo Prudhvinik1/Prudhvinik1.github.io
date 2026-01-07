@@ -18,7 +18,7 @@ import {
   Check
 } from "lucide-react";
 import Link from "next/link";
-import { getPersonalInfo, getAbout, getExperience, getEducation } from "@/lib/sanity/data";
+import { personalInfo, about, experience, education } from "@/lib/data";
 import { CopyIntroductionButton } from "@/components/copy-introduction-button";
 
 export const metadata: Metadata = {
@@ -26,14 +26,7 @@ export const metadata: Metadata = {
   description: "Referral information for Prudhvi Nikku - Backend & ML Engineer",
 };
 
-export default async function ReferPage() {
-  // Fetch data from Sanity CMS (with fallback to static data)
-  const [personalInfo, about, experience, education] = await Promise.all([
-    getPersonalInfo(),
-    getAbout(),
-    getExperience(),
-    getEducation(),
-  ]);
+export default function ReferPage() {
 
   // Sponsorship status - Update these values based on your actual status
   const sponsorshipStatus = {

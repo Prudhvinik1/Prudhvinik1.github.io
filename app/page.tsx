@@ -20,34 +20,18 @@ import {
   FadeIn,
 } from "@/components/smooth-animations";
 import {
-  getPersonalInfo,
-  getAbout,
-  getExperience,
-  getEducation,
-  getProjects,
-  getSkills,
-  getStats,
-} from "@/lib/sanity/data";
-import { featuredLinks } from "@/lib/data";
+  personalInfo,
+  about,
+  experience,
+  education,
+  projects,
+  skills,
+  stats,
+  featuredLinks,
+} from "@/lib/data";
 import { getSkillIcon } from "@/lib/skill-icons";
 
-// Revalidate the page every 60 seconds to pick up CMS changes
-export const revalidate = 60;
-
-export default async function Home() {
-  // Fetch all data from Sanity CMS (with fallback to static data)
-  const [personalInfo, about, experience, education, projects, skills, statsData] = await Promise.all([
-    getPersonalInfo(),
-    getAbout(),
-    getExperience(),
-    getEducation(),
-    getProjects(),
-    getSkills(),
-    getStats(),
-  ]);
-
-  // Stats should always be an array (getStats ensures this)
-  const stats = statsData;
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgress />
@@ -185,6 +169,7 @@ export default async function Home() {
                       value={stats[0].value}
                       label={stats[0].label}
                       description={stats[0].description}
+                      variant="yellow"
                     />
                   </LiftOnHover>
                 </StaggerItem>
@@ -197,6 +182,7 @@ export default async function Home() {
                       value={stats[1].value}
                       label={stats[1].label}
                       description={stats[1].description}
+                      variant="purple"
                     />
                   </LiftOnHover>
                 </StaggerItem>
@@ -209,6 +195,7 @@ export default async function Home() {
                       value={stats[2].value}
                       label={stats[2].label}
                       description={stats[2].description}
+                      variant="default"
                     />
                   </LiftOnHover>
                 </StaggerItem>
@@ -221,6 +208,7 @@ export default async function Home() {
                       value={stats[3].value}
                       label={stats[3].label}
                       description={stats[3].description}
+                      variant="dark"
                     />
                   </LiftOnHover>
                 </StaggerItem>

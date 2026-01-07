@@ -7,13 +7,12 @@ import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { urlFor } from "@/lib/sanity/client";
 
 interface Project {
   name: string;
   description: string;
   link: string;
-  image?: any;
+  image?: string;
   technologies?: string[];
   period?: string;
 }
@@ -26,14 +25,14 @@ const MAX_DESCRIPTION_LENGTH = 150;
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const shouldTruncate = project.description.length > MAX_DESCRIPTION_LENGTH;
   const displayDescription = isExpanded || !shouldTruncate
     ? project.description
     : project.description.slice(0, MAX_DESCRIPTION_LENGTH).trim() + "...";
 
-  // Generate image URL from Sanity
-  const imageUrl = project.image ? urlFor(project.image).width(600).height(340).url() : null;
+  // Use image URL directly if provided
+  const imageUrl = project.image || null;
 
   return (
     <Card className="border-2 hover:border-primary/50 transition-smooth flex flex-col h-full group overflow-hidden">
