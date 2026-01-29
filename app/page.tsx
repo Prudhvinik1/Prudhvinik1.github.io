@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Github,
   Linkedin,
@@ -35,7 +36,8 @@ import { VisitorMetrics } from "@/components/visitor-metrics";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { SkillCategoryCard } from "@/components/skill-category-card";
-import { AnimatedBackground, HeroVisualElement } from "@/components/animated-background";
+import { AnimatedBackground } from "@/components/animated-background";
+import { TerminalTicker } from "@/components/terminal-ticker";
 import {
   FadeInOnScroll,
   StaggerContainer,
@@ -215,8 +217,37 @@ export default function Home() {
             </div>
 
             {/* Visual Element - 40% */}
-            <div className="lg:col-span-2 hidden lg:block">
-              <HeroVisualElement />
+            <div className="lg:col-span-2 flex flex-col items-center justify-center gap-8 py-8 lg:py-0 order-first lg:order-last">
+              {/* Profile Picture */}
+              <FadeIn delay={0.6}>
+                <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px]">
+                  {/* Decorative ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-spin-slow" 
+                       style={{ animationDuration: '20s' }} />
+                  
+                  {/* Profile picture container */}
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl hover:shadow-glow transition-all duration-300 hover:scale-105 group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-full" />
+                    <Image
+                      src="/profile-picture.jpeg"
+                      alt={personalInfo.name}
+                      fill
+                      className="object-cover rounded-full"
+                      priority
+                      sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, (max-width: 1024px) 280px, 280px"
+                    />
+                  </div>
+                  
+                  {/* Floating decoration dots */}
+                  <div className="absolute -top-4 -right-4 w-3 h-3 rounded-full bg-primary animate-pulse" />
+                  <div className="absolute -bottom-4 -left-4 w-3 h-3 rounded-full bg-accent animate-pulse" style={{ animationDelay: '1s' }} />
+                </div>
+              </FadeIn>
+
+              {/* Terminal Widget */}
+              <FadeIn delay={0.8}>
+                <TerminalTicker />
+              </FadeIn>
             </div>
           </div>
         </div>
